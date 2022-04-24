@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanya_doc/Home_page.dart';
 import 'package:tanya_doc/theme.dart';
 
 class LoginPage extends StatelessWidget {
@@ -66,7 +67,10 @@ class LoginPage extends StatelessWidget {
 
     Widget button() => Center(
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>Home()));
+            },
             child: Container(
               height: 52,
               width: 180,
