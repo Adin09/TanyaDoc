@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const Color kprimeColor = Color(0xff917AE5);
+const Color kprimeColor = Color(0xff4E38B2);
 const Color kwhiteColor = Color(0xffffffff);
 const Color kblackColor = Color(0xff3A3A3A);
 const Color kpinkColor = Color(0xffFF70A3);

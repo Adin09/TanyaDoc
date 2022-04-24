@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tanya_doc/Home_page.dart';
+import 'package:tanya_doc/home_page.dart';
 import 'package:tanya_doc/theme.dart';
 
 class LoginPage extends StatelessWidget {
