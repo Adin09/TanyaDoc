@@ -7,7 +7,8 @@ void main() {
     MaterialApp(
       initialRoute: '/start',
       routes: {
-        '/start': (context) => GetStarted(),
+        '/start': (context) => const GetStarted(),
+        '/BatalPasien': (context) => const Batal(),
       },
     ),
   );
