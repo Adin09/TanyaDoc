@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:tanya_doc/get_started.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MaterialApp(
+      initialRoute: '/start',
+      routes: {
+        '/start': (context) => GetStarted(),
+      },
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
