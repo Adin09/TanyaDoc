@@ -10,6 +10,7 @@ class GetStarted extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+
           Image.asset(
             'assets/background.png',
             fit: BoxFit.cover,
@@ -22,12 +23,20 @@ class GetStarted extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+
                   Image.asset(
                     'assets/logo.png',
                     width: 200,
                   ),
                   const SizedBox(
-                    height: 100,
+                    height: 20,
+                  ),
+                  Text("TanyaDoc", style: bluekStyle.copyWith(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                  const SizedBox(
+                    height: 50,
                   ),
                   InkWell(
                     onTap: () {

@@ -17,9 +17,19 @@ class LoginPage extends StatelessWidget {
     Widget logo() => Center(
       child: Padding(
         padding: const EdgeInsets.only(top: 80),
-        child: Image.asset(
-          'assets/logo.png',
-          width: 250,
+        child: Column(
+          children : [Image.asset(
+            'assets/logo.png',
+            width: 250,
+          ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text("TanyaDoc", style: bluekStyle.copyWith(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),),
+          ],
         ),
       ),
     );
@@ -27,7 +37,7 @@ class LoginPage extends StatelessWidget {
     Widget content() => Column(
       children: [
         const SizedBox(
-          height: 100,
+          height: 20,
         ),
         Container(
           margin: const EdgeInsets.only(top: 15, left: 20, right: 20),
