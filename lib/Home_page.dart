@@ -143,7 +143,8 @@ class Home extends StatelessWidget {
                           width: 15,
                         ),
                         Expanded(
-                          child: Container(
+                          child: InkWell(
+                          child : Container(
                             height: 160,
                             padding: const EdgeInsets.all(20),
                             decoration: BoxDecoration(
@@ -168,6 +169,8 @@ class Home extends StatelessWidget {
                                 )
                               ],
                             ),
+                          ),
+                            onTap: () => {Navigator.pushNamed(context, '/BatalPasien')},
                           ),
                         ),
                       ],

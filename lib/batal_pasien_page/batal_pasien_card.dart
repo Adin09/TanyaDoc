@@ -20,7 +20,7 @@ class HistoryCards extends StatelessWidget {
                   SizedBox(height: 60,),
                   Text("At", style: TextStyle(
                       color: Colors.purple,
-                      fontSize: 26, fontWeight: FontWeight.bold),
+                      fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -29,12 +29,12 @@ class HistoryCards extends StatelessWidget {
                 children: const [
                   Text("Senin", style: TextStyle(
                     color: Colors.purple,
-                    fontSize: 22,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,),
                   ),
                   Text("Harapan Bunda", style: TextStyle(
                     color: Colors.black45,
-                    fontSize: 18,),
+                    fontSize: 16,),
                   ),
                 ],
               ),
@@ -42,12 +42,13 @@ class HistoryCards extends StatelessWidget {
             ],
           ),
           Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: const [
-              Icon(Icons.check_circle, size: 40, color: Colors.purple,),
+              Icon(Icons.check_circle, size: 30, color: Colors.purple,),
               SizedBox(height: 60,),
               Text("10:00 AM", style: TextStyle(
                 color: Colors.purple,
-                fontSize: 26,),
+                fontSize: 20,),
               ),
             ],
           ),
@@ -59,7 +60,7 @@ class HistoryCards extends StatelessWidget {
       // 2
       constraints: const BoxConstraints.expand(
         width: 600,
-        height: 185,
+        height: 165,
       ),
       // 3
       decoration: const BoxDecoration(

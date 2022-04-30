@@ -18,7 +18,8 @@ class _BatalState extends State<Batal> {
         title: Text("Notification"),
         centerTitle: true,
       ),
-      body: Container(
+      body: SingleChildScrollView(
+      child: Container(
         padding: EdgeInsets.fromLTRB(30, 50, 30, 10),
         child: Center(
           child: Column(
@@ -34,7 +35,7 @@ class _BatalState extends State<Batal> {
             ],
           ),
         ),
-      ),
+      ),),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(20.0),
         // ignore: deprecated_member_use
@@ -48,7 +49,7 @@ class _BatalState extends State<Batal> {
               Icon(Icons.check, size: 40,),
               Text("Changes Saved", style: TextStyle(
                 color: Colors.white,
-                fontSize: 26,),
+                fontSize: 18,),
               ),
             ],
           ),
