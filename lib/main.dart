@@ -8,7 +8,6 @@ void main() {
       initialRoute: '/start',
       routes: {
         '/start': (context) => GetStarted(),
-        '/BatalPasien': (context) => Batal(),
       },
     ),
   );
