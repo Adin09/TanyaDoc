@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tanya_doc/batal_pasien_page/batal_paseien_page.dart';
 import 'package:tanya_doc/get_started.dart';
 
 void main() {
@@ -7,6 +8,7 @@ void main() {
       initialRoute: '/start',
       routes: {
         '/start': (context) => GetStarted(),
+        '/BatalPasien': (context) => Batal(),
       },
     ),
   );
