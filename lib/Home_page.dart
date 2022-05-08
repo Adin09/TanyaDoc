@@ -144,33 +144,34 @@ class Home extends StatelessWidget {
                         ),
                         Expanded(
                           child: InkWell(
-                          child : Container(
-                            height: 160,
-                            padding: const EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: kwhiteColor,
-                              borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              height: 160,
+                              padding: const EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: kwhiteColor,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/jadwal.png',
+                                    width: 70,
+                                  ),
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  Text(
+                                    'Jadwal',
+                                    style: bluekStyle.copyWith(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center,
+                                  )
+                                ],
+                              ),
                             ),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/jadwal.png',
-                                  width: 70,
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text(
-                                  'Jadwal',
-                                  style: bluekStyle.copyWith(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
-                                )
-                              ],
-                            ),
-                          ),
-                            onTap: () => {Navigator.pushNamed(context, '/BatalPasien')},
+                            onTap: () =>
+                                {Navigator.pushNamed(context, '/jadwalDokter')},
                           ),
                         ),
                       ],

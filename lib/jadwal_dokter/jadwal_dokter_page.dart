@@ -3,14 +3,14 @@ import 'package:tanya_doc/batal_pasien_page/batal_pasien_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_itemss.dart';
 
-class Batal extends StatefulWidget {
-  const Batal({Key? key}) : super(key: key);
+class JadwalDokter extends StatefulWidget {
+  const JadwalDokter({Key? key}) : super(key: key);
 
   @override
-  State<Batal> createState() => _BatalState();
+  State<JadwalDokter> createState() => _JadwalDokterState();
 }
 
-class _BatalState extends State<Batal> {
+class _JadwalDokterState extends State<JadwalDokter> {
   final List<ListItem> items = List.from(listItems);
 
   @override
@@ -18,19 +18,16 @@ class _BatalState extends State<Batal> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
-        title: const Text("Notification"),
+        title: Text("Jadwal Dokter"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              HistoryCards(),
-              HistoryCards(),
-              HistoryCards(),
-            ],
-          ),
+        child: Column(
+          children: [
+            HistoryCards(),
+            HistoryCards(),
+            HistoryCards(),
+          ],
         ),
       ),
       bottomNavigationBar: Padding(
