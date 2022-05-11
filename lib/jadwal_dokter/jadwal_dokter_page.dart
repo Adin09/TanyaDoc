@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tanya_doc/batal_pasien_page/batal_pasien_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_itemss.dart';
 
@@ -23,11 +22,7 @@ class _JadwalDokterState extends State<JadwalDokter> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: [
-            HistoryCards(),
-            HistoryCards(),
-            HistoryCards(),
-          ],
+          children: [],
         ),
       ),
       bottomNavigationBar: Padding(

@@ -64,30 +64,32 @@ class Home extends StatelessWidget {
                           width: 15,
                         ),
                         Expanded(
-                          child: Container(
-                            height: 160,
-                            padding: const EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: kwhiteColor,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/daftar.png',
-                                  width: 75,
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text(
-                                  'Kontak ',
-                                  style: bluekStyle.copyWith(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.center,
-                                )
-                              ],
+                          child: InkWell(
+                            child: Container(
+                              height: 160,
+                              padding: const EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: kwhiteColor,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/daftar.png',
+                                    width: 75,
+                                  ),
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  Text(
+                                    'Kontak ',
+                                    style: bluekStyle.copyWith(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.center,
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -171,7 +173,7 @@ class Home extends StatelessWidget {
                               ),
                             ),
                             onTap: () =>
-                                {Navigator.pushNamed(context, '/jadwalDokter')},
+                                {Navigator.pushNamed(context, '/BatalPasien')},
                           ),
                         ),
                       ],

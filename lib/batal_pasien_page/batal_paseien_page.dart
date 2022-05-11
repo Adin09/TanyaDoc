@@ -1,7 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:tanya_doc/batal_pasien_page/batal_pasien_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_itemss.dart';
+import 'package:tanya_doc/batal_pasien_page/list_items_widget.dart';
 
 class Batal extends StatefulWidget {
   const Batal({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class Batal extends StatefulWidget {
 
 class _BatalState extends State<Batal> {
   final List<ListItem> items = List.from(listItems);
+  GlobalKey<AnimatedListState> listKey = GlobalKey<AnimatedListState>();
 
   @override
   Widget build(BuildContext context) {
@@ -21,28 +24,24 @@ class _BatalState extends State<Batal> {
         title: const Text("Notification"),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              HistoryCards(),
-              HistoryCards(),
-              HistoryCards(),
-            ],
-          ),
+      body: AnimatedList(
+        key: listKey,
+        initialItemCount: items.length,
+        itemBuilder: (context, index, animation) => ListItemWidget(
+          item: items[index],
+          animation: animation,
+          onClicked: () => removedItem(index),
         ),
       ),
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.all(20.0),
-        // ignore: deprecated_member_use
+        padding: const EdgeInsets.all(20.0),
         child: RaisedButton(
-          onPressed: () => {},
+          onPressed: () => {Navigator.pushNamed(context, '/home')},
           color: Colors.purple,
           textColor: Colors.white,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Icon(
                 Icons.check,
                 size: 40,
@@ -58,6 +57,20 @@ class _BatalState extends State<Batal> {
           ),
         ),
       ),
+    );
+  }
+
+  void removedItem(int index) {
+    final removedItem = items[index];
+    items.removeAt(index);
+    listKey.currentState!.removeItem(
+      index,
+      (context, animation) => ListItemWidget(
+        item: removedItem,
+        animation: animation,
+        onClicked: () {},
+      ),
+      duration: const Duration(microseconds: 600),
     );
   }
 }

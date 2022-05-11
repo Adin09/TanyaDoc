@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tanya_doc/batal_pasien_page/batal_paseien_page.dart';
 import 'package:tanya_doc/get_started.dart';
+import 'package:tanya_doc/home_page.dart';
 import 'package:tanya_doc/jadwal_dokter/jadwal_dokter_page.dart';
 
 void main() {
@@ -9,6 +10,7 @@ void main() {
       initialRoute: '/start',
       routes: {
         '/start': (context) => const GetStarted(),
+        '/home': (context) => const Home(),
         '/BatalPasien': (context) => const Batal(),
         '/jadwalDokter': (context) => const JadwalDokter(),
       },
