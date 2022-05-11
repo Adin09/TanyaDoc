@@ -34,6 +34,7 @@ class Home extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
+                          child: InkWell(
                           child: Container(
                             height: 160,
                             padding: const EdgeInsets.all(20),
@@ -58,6 +59,9 @@ class Home extends StatelessWidget {
                                 )
                               ],
                             ),
+                          ),
+                            onTap: () =>
+                          {Navigator.pushNamed(context, '/BatalPasien')},
                           ),
                         ),
                         const SizedBox(
