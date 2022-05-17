@@ -3,6 +3,7 @@ import 'package:tanya_doc/batal_pasien_page/batal_paseien_page.dart';
 import 'package:tanya_doc/get_started.dart';
 import 'package:tanya_doc/home_page.dart';
 import 'package:tanya_doc/informasi_page/informasi_page.dart';
+import 'package:tanya_doc/kontak/kontak_view.dart';
 
 void main() {
   runApp(
@@ -13,6 +14,7 @@ void main() {
         '/home': (context) => const Home(),
         '/BatalPasien': (context) => const Batal(),
         '/informasi': (context) => const Informasi(),
+        '/kontak': (context) => const Kontak(),
       },
     ),
   );

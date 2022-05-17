@@ -96,7 +96,8 @@ class Home extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            onTap: () {},
+                            onTap: () =>
+                                {Navigator.pushNamed(context, '/kontak')},
                           ),
                         ),
                       ],
