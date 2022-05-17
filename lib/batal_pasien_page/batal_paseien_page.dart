@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_itemss.dart';
@@ -74,15 +72,3 @@ class _BatalState extends State<Batal> {
     );
   }
 }
-
-typedef RemovedItemBuilder<T> = Widget Function(
-    T item, BuildContext context, Animation<double> animation);
-
-/// Keeps a Dart [List] in sync with an [AnimatedList].
-///
-/// The [insert] and [removeAt] methods apply to both the internal list and
-/// the animated list that belongs to [listKey].
-///
-/// This class only exposes as much of the Dart List API as is needed by the
-/// sample app. More list methods are easily added, however methods that
-/// mutate the list must make the same changes to the animated list in terms

@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:tanya_doc/theme.dart';
+import 'package:sliding_sheet/sliding_sheet.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -35,33 +36,33 @@ class Home extends StatelessWidget {
                       children: [
                         Expanded(
                           child: InkWell(
-                          child: Container(
-                            height: 160,
-                            padding: const EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: kwhiteColor,
-                              borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              height: 160,
+                              padding: const EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: kwhiteColor,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/informasi.png',
+                                    width: 70,
+                                  ),
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  Text(
+                                    'Informasi',
+                                    style: bluekStyle.copyWith(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
                             ),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/informasi.png',
-                                  width: 70,
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text(
-                                  'Informasi',
-                                  style: bluekStyle.copyWith(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
-                          ),
                             onTap: () =>
-                          {Navigator.pushNamed(context, '/BatalPasien')},
+                                {Navigator.pushNamed(context, '/informasi')},
                           ),
                         ),
                         const SizedBox(
@@ -95,6 +96,7 @@ class Home extends StatelessWidget {
                                 ],
                               ),
                             ),
+                            onTap: () {},
                           ),
                         ),
                       ],
