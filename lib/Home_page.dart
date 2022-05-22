@@ -220,41 +220,68 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 content(),
-                Container(
-                  child: PageView(
-                    controller: pageController,
-                    children: <Widget>[],
-                  ),
-                )
               ],
             )
           ],
         ),
       ),
-      bottomNavigationBar: new Theme(
-        data: Theme.of(context).copyWith(
-            // sets the background color of the `BottomNavigationBar`
-            canvasColor: Colors.green,
-            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
-            primaryColor: Colors.red,
-            textTheme: Theme.of(context).textTheme.copyWith(
-                caption: new TextStyle(
-                    color: Colors
-                        .yellow))), // sets the inactive color of the `BottomNavigationBar`,
-        child: new BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.article_rounded), label: 'Articles'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.history), label: 'History'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_rounded), label: 'Account'),
+      bottomNavigationBar: Container(
+        height: 70,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () => {Navigator.pushNamed(context, '/kontak')},
+                  icon: Icon(
+                    Icons.chat,
+                    size: 30,
+                    color: Colors.purple,
+                  ),
+                ),
+                Text(
+                  "Chat",
+                  style: TextStyle(color: Colors.purple),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.home,
+                    size: 30,
+                    color: Colors.purple,
+                  ),
+                ),
+                Text(
+                  "home",
+                  style: TextStyle(color: Colors.purple),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.person_rounded,
+                    size: 30,
+                    color: Colors.purple,
+                  ),
+                ),
+                Text(
+                  "Account",
+                  style: TextStyle(color: Colors.purple),
+                ),
+              ],
+            ),
           ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.yellow,
-          unselectedItemColor: Colors.white,
-          onTap: onTapped,
         ),
       ),
     );
