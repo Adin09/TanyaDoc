@@ -251,7 +251,7 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () => {Navigator.pushNamed(context, '/home')},
                   icon: Icon(
                     Icons.home,
                     size: 30,
