@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tanya_doc/batal_pasien_page/batal_pasien_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_card.dart';
 import 'package:tanya_doc/batal_pasien_page/list/list_itemss.dart';
-import 'package:tanya_doc/terima_tolak/list/list_card_pasien.dart';
 
 class Terima_tolak extends StatefulWidget {
   const Terima_tolak({Key? key}) : super(key: key);
@@ -31,7 +29,6 @@ class _Terima_tolakState extends State<Terima_tolak> {
               child: ListView(
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
-                children: card,
               ),
             )
           ],

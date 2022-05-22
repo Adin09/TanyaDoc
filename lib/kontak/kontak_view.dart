@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tanya_doc/kontak/kontak_card.dart';
+import 'package:tanya_doc/kontak/list/list_class.dart';
+import 'package:tanya_doc/kontak/list/list_kontak.dart';
+import 'package:tanya_doc/kontak/list_contact_widget.dart';
 
 class Kontak extends StatefulWidget {
   const Kontak({Key? key}) : super(key: key);
@@ -9,6 +11,9 @@ class Kontak extends StatefulWidget {
 }
 
 class _Kontak extends State<Kontak> {
+  final List<ListKontak> kontak = List.from(listKontak);
+  GlobalKey<AnimatedListState> listKey = GlobalKey<AnimatedListState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,21 +29,29 @@ class _Kontak extends State<Kontak> {
         centerTitle: true,
         elevation: 0.0,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-          child: Column(
-            children: [
-              CardKontak(),
-              CardKontak(),
-              CardKontak(),
-              CardKontak(),
-              CardKontak(),
-              CardKontak(),
-            ],
-          ),
+      body: AnimatedList(
+        key: listKey,
+        initialItemCount: kontak.length,
+        itemBuilder: (context, index, animation) => ListContactWidget(
+          kontak: kontak[index],
+          animation: animation,
+          onClicked: () => removedItem(index),
         ),
       ),
+    );
+  }
+
+  void removedItem(int index) {
+    final removedItem = kontak[index];
+    kontak.removeAt(index);
+    listKey.currentState!.removeItem(
+      index,
+      (context, animation) => ListContactWidget(
+        kontak: removedItem,
+        animation: animation,
+        onClicked: () {},
+      ),
+      duration: const Duration(microseconds: 600),
     );
   }
 }
