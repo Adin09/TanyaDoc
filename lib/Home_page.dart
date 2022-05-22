@@ -3,8 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:tanya_doc/theme.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _selectedIndex = 0;
+  PageController pageController = PageController();
+
+  void onTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    pageController.animateToPage(index,
+        duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,30 +138,33 @@ class Home extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            height: 160,
-                            padding: const EdgeInsets.all(20),
-                            decoration: BoxDecoration(
-                              color: kwhiteColor,
-                              borderRadius: BorderRadius.circular(20),
+                          child: InkWell(
+                            child: Container(
+                              height: 160,
+                              padding: const EdgeInsets.all(20),
+                              decoration: BoxDecoration(
+                                color: kwhiteColor,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/map.png',
+                                    width: 70,
+                                  ),
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  Text(
+                                    'Map',
+                                    style: bluekStyle.copyWith(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  )
+                                ],
+                              ),
                             ),
-                            child: Column(
-                              children: [
-                                Image.asset(
-                                  'assets/map.png',
-                                  width: 70,
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Text(
-                                  'Map',
-                                  style: bluekStyle.copyWith(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
-                                )
-                              ],
-                            ),
+                            onTap: () => {Navigator.pushNamed(context, '/map')},
                           ),
                         ),
                         const SizedBox(
@@ -201,9 +220,41 @@ class Home extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 content(),
+                Container(
+                  child: PageView(
+                    controller: pageController,
+                    children: <Widget>[],
+                  ),
+                )
               ],
             )
           ],
+        ),
+      ),
+      bottomNavigationBar: new Theme(
+        data: Theme.of(context).copyWith(
+            // sets the background color of the `BottomNavigationBar`
+            canvasColor: Colors.green,
+            // sets the active color of the `BottomNavigationBar` if `Brightness` is light
+            primaryColor: Colors.red,
+            textTheme: Theme.of(context).textTheme.copyWith(
+                caption: new TextStyle(
+                    color: Colors
+                        .yellow))), // sets the inactive color of the `BottomNavigationBar`,
+        child: new BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.article_rounded), label: 'Articles'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.history), label: 'History'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_rounded), label: 'Account'),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.yellow,
+          unselectedItemColor: Colors.white,
+          onTap: onTapped,
         ),
       ),
     );
