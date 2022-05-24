@@ -1,0 +1,111 @@
+import 'package:flutter/material.dart';
+
+class antrian extends StatefulWidget {
+  const antrian({Key? key}) : super(key: key);
+ 
+  @override
+  State<antrian> createState() => _antrian();
+}
+ 
+class _antrian extends State<antrian> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+ 
+
+isi(){
+  return
+  Container(
+    margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+     decoration: BoxDecoration(
+           border: Border.all(color: Colors.black,width: 2),
+           borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        color: Color(0xffEBF1FA),),
+            padding: EdgeInsets.fromLTRB(5, 0, 20 , 0),
+            height: 100,
+            width: 380,
+            //color: Colors.purpleAccent,
+            child: Row(
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+              Container(
+                alignment: Alignment.center,
+                height: 85,
+                width: 85,
+                decoration: BoxDecoration(
+           border: Border.all(color: Colors.black,width: 2),
+           borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        color: Color(0xffEBF1FA),),
+               // color: Colors.grey,
+                child: Column(children: [
+                  Icon(Icons.check,size: 60,),
+                  Text('14.50')
+                ],)),
+                SizedBox(width: 10,),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+              Text("Nama : Putri Sholeha",style: TextStyle(fontSize: 15),),
+              Text("Umur : 29 tahun",style: TextStyle(fontSize: 15),),
+              Text("Alamat : Nesu, Banda Aceh",style: TextStyle(fontSize: 15),),
+              ]),
+              
+            ],),
+          );
+
+}
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+     home: SafeArea(child:
+     Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          
+      body :SingleChildScrollView( 
+        child:
+        Column(
+        children:<Widget> [
+          Container(
+            
+            padding: EdgeInsets.fromLTRB(20, 0, 20 , 0),
+            height: 80,
+            color: Colors.purpleAccent,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+              Icon(Icons.arrow_back,size: 30,),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+              Text("Daftar Kehadiran Pasien",style: TextStyle(fontSize: 18),),
+              Text("Senin, 08 April 2022",style: TextStyle(fontSize: 18),)]),
+              Container(
+                alignment: Alignment.center,
+                height: 70,
+                width: 50,
+                decoration: BoxDecoration(
+           border: Border.all(color: Colors.black,width: 2),
+           borderRadius: BorderRadius.all(Radius.circular(20.0)),
+        color: Color(0xffEBF1FA),),
+               // color: Colors.grey,
+                child: Text("""Sesi
+   2""",style: TextStyle(fontSize: 20),),)
+            ],),
+          ),
+          SizedBox(height: 10,),
+isi(),
+isi(),
+isi(),
+isi(),
+isi(),
+
+                    ],
+          )
+        ),
+    )));
+        }}
