@@ -68,8 +68,12 @@ class LoginPage extends StatelessWidget {
     Widget button() => Center(
           child: InkWell(
             onTap: () {
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>Home()));
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const HomePage(),
+                ),
+              );
             },
             child: Container(
               height: 52,
